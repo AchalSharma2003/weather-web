@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div> <!-- New: Animated background -->
+    <div class="container">
+        <!-- Input Page -->
+        <section id="input-section" class="section active">
+            <h1>Weather App</h1>
+            <form id="weather-form">
+                <div class="form-group">
+                    <label for="city">City Name:</label>
+                    <input type="text" id="city" placeholder="e.g., London" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country (or Code):</label>
+                    <input type="text" id="country" placeholder="e.g., UK or GB" required>
+                </div>
+                <div class="form-group">
+                    <label>Temperature Unit:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="unit" value="metric" checked> Celsius
+                        </label>
+                        <label>
+                            <input type="radio" name="unit" value="imperial"> Fahrenheit
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" id="submit-btn">Show Weather</button>
+            </form>
+            <div id="error-message" class="error"></div>
+        </section>
+
+        <!-- Weather Dashboard -->
+        <section id="weather-section" class="section">
+            <h1 id="location">Weather in <span id="city-display"></span>, <span id="country-display"></span></h1>
+            <div class="dashboard">
+                <div class="widget">
+                    <h3>Temperature</h3>
+                    <p id="temperature">--</p>
+                </div>
+                <div class="widget">
+                    <h3>Condition</h3>
+                    <p id="condition">--</p>
+                    <img id="weather-icon" src="" alt="Weather Icon" style="display: none;"> <!-- New: Icon for condition -->
+                </div>
+                <div class="widget">
+                    <h3>Humidity</h3>
+                    <p id="humidity">--</p>
+                </div>
+                <div class="widget">
+                    <h3>Wind Speed</h3>
+                    <p id="wind-speed">--</p>
+                </div>
+                <div class="widget">
+                    <h3>Feels Like</h3>
+                    <p id="feels-like">--</p>
+                </div>
+            </div>
+            <button id="back-btn">Back to Search</button>
+            <div id="weather-error" class="error"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
